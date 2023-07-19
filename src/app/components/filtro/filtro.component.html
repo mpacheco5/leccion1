@@ -1,0 +1,27 @@
+<h1 class="animated fadeIn fast">Rutas <small>Internas y Externas</small> </h1>
+<select #filtro name="filtrar" id="filtrar">
+    <option value="todos">Todos</option>
+    <option value="interno">Interno</option>
+    <option value="externo">Externo</option>
+</select>
+<button (click)="filtrarRutas(filtro.value)">Filtrar</button>
+<hr>
+
+<div class="col animated fadeIn fast" *ngFor="let ruta of rutas; let i=index">
+    <div class="animated fadeIn fast card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="ruta.img" class="img-fluid rounded-start" alt="cifa">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Ciudad de Origen: {{ruta.ciuorigen}}</h5>
+                    <p class="card-text">Ciudad de Destino: {{ruta.ciudestino}}</p>
+                    <p class="card-text"><small class="text-body-secondary">{{ruta.descripcion}}</small></p>
+
+                    <button (click)="verRuta(i)" type="button" class="btn btn-primary">Saber más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

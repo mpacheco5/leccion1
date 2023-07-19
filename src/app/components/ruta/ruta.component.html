@@ -1,0 +1,26 @@
+<h1>INFORMACION DE LA RUTA SELECCIONADA</h1>
+<hr>
+<div class="row">
+
+    <div class="col-md-4">
+        <img class="img" [src]="ruta.img" alt="cifa">
+        <br><br>
+        <a [routerLink]="['/rutas']" class="btn btn-outline-danger btn-block"> Regresar </a>
+
+    </div>
+    <div class="col-md-8">
+        <h3>Ciudad de Origen: {{ruta.ciuorigen}}</h3>
+        <hr>
+        <h3>Ciudad de Destino: {{ruta.ciudestino}}</h3>
+        <hr>
+        <p class="card-text"><small class="text-body-secondary">{{ruta.descripcion}}</small></p>
+        <p>
+            Precio de la Ruta: {{ruta.precio}}
+        </p>
+        <div class="tipoimg">
+            <hr>
+            <p *ngIf="ruta.tipo =='Interno'"> <img src="assets\img\interno.png" alt=""></p>
+            <p *ngIf="ruta.tipo =='Externo'"> <img src="assets\img\externo.png" alt=""></p>
+        </div>
+    </div>
+</div>
